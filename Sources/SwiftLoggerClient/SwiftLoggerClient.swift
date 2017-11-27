@@ -17,6 +17,12 @@ import SwiftyJSON
 //
 // http post function that sends the log message to a listening server
 //
+
+// public variables
+public let SWIFT_LOGGER_backEndSchema = "http"
+public let SWIFT_LOGGER_backEndPort: Int16 = 80
+
+
 public func sendLog(target: String, appName: String, messageType: String, source: String, line: Int, function: String,  message: String?, server: String) {
 
     let data: [String: Any] = [
@@ -30,8 +36,6 @@ public func sendLog(target: String, appName: String, messageType: String, source
     ]
 
     // default backend parameters dependant of Swift Logger Server deployment and configuration
-    public let SWIFT_LOGGER_backEndSchema = "http"
-    public let SWIFT_LOGGER_backEndPort: Int16 = 80
     let backEndHost = server
     let method = "POST"
     let path = "/logger"
@@ -78,14 +82,13 @@ public class Logger {
 
     // define instance variables
     private var applicationName: String
-    private var state: State
+    private var state: String
     private var target: String
     private var server: String
 
 
     public init(applicationName: String, target: Target, onServer: String, state: State) {
         self.applicationName = applicationName
-        self.state = state
         self.server = onServer
 
         switch target {
@@ -98,7 +101,7 @@ public class Logger {
         switch state {
         case .enabled:
             self.state = "enabled"
-        case .diabled:
+        case .disabled:
             self.state = "disabled"
         }
     }
