@@ -12,7 +12,7 @@ let package = Package(
             targets: ["SwiftLoggerClient"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/IBM-Swift/Kitura-net.git", .upToNextMinor(from: "1.7.0")),
+        .package(url: "https://github.com/IBM-Swift/Kitura-net.git", .upToNextMinor(from: "2.0.0")),
         .package(url: "https://github.com/IBM-Swift/SwiftyJSON.git", .upToNextMinor(from: "17.0.0"))
     ],
     targets: [
