@@ -19,8 +19,8 @@ import SwiftyJSON
 //
 
 // public variables
-public let SWIFT_LOGGER_backEndSchema = "http"
-public let SWIFT_LOGGER_backEndPort: Int16 = 80
+public var SWIFT_LOGGER_backEndSchema = "http"
+public var SWIFT_LOGGER_backEndPort: Int16 = 80
 
 
 public func sendLog(target: String, appName: String, messageType: String, source: String, line: Int, function: String,  message: String?, server: String) {
