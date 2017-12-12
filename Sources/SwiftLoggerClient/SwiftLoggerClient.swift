@@ -78,6 +78,7 @@ public class Logger {
     public enum Target {
         case file
         case terminal
+        case both
     }
 
     // define instance variables
@@ -96,6 +97,8 @@ public class Logger {
             self.target = "file"
         case .terminal:
             self.target = "terminal"
+        case .both:
+            self.target = "both"
         }
 
         switch state {
